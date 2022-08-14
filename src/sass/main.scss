@@ -1,0 +1,226 @@
+@use 'colors';
+@import 'mixin';
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	@include flex;
+	position: relative;
+	height: 100vh;
+	font-size: 16px;
+	font-family: 'Rubik', sans-serif;
+	overflow: hidden;
+}
+.text {
+	flex-basis: 40%;
+	&__heading {
+		color: colors.$secondaryDarkViolet;
+		margin-bottom: 20px;
+	}
+	&__paragraf {
+		line-height: 25px;
+		font-size: 0.9rem;
+		color: colors.$darkGrayishViolet;
+	}
+}
+.back {
+	position: absolute;
+	top: 0;
+	left: -50px;
+	background-color: colors.$moderateViolet;
+	height: 60%;
+	width: 27vw;
+	z-index: -100;
+}
+.back::before {
+	content: '';
+	position: absolute;
+	bottom: -13.5vw;
+	background-color: colors.$moderateViolet;
+	border-radius: 50%;
+	width: 27vw;
+	height: 27vw;
+}
+.backSecond {
+	position: absolute;
+	background-color: colors.$secondaryViolet;
+	height: 60%;
+	width: 35vw;
+	z-index: -100;
+	bottom: -10vh;
+	right: -150px;
+}
+.backSecond::before {
+	content: '';
+	position: absolute;
+	top: -17.5vw;
+	background-color: colors.$secondaryViolet;
+	border-radius: 50%;
+	width: 35vw;
+	height: 35vw;
+}
+
+.wrapper {
+	@include flex;
+	justify-content: space-around;
+	width: 75vw;
+	height: 100vh;
+}
+.phone {
+	@include flex;
+	background-color: colors.$secondaryWhite;
+	box-shadow: 1px 3px 35px -8px rgba(0, 0, 0, 0.24);
+	border-radius: 30px;
+	width: 225px;
+	height: 450px;
+	padding: 8px;
+	&__content {
+		display: flex;
+		flex-direction: column;
+		background-color: colors.$secondaryViolet;
+		width: 100%;
+		height: 100%;
+		border-radius: 30px;
+		overflow: hidden;
+	}
+}
+.headName {
+	@include flex;
+	// justify-content: flex-start;
+	position: relative;
+	align-self: flex-start;
+	height: 14%;
+	width: 100%;
+	padding-top: 20px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	box-shadow: 1px 3px 35px -8px rgba(0, 0, 0, 0.24);
+	background-image: linear-gradient(
+		90deg,
+		rgba(136, 56, 255, 1) 26%,
+		rgba(233, 66, 255, 1) 86%
+	);
+	&__img {
+		width: 10%;
+		border-radius: 50%;
+		border: 1px solid white;
+		margin-right: 4%;
+	}
+	&__text {
+		font-size: 0.5rem;
+		margin-right: 25%;
+	}
+}
+.status {
+	color: colors.$paleViolet;
+}
+.name {
+	color: colors.$secondaryViolet;
+	font-size: 0.7rem;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+.fa-angle-left {
+	margin-left: 7%;
+	margin-right: 3%;
+	font-size: 0.7rem;
+	color: white;
+}
+.fa-ellipsis-vertical {
+	color: white;
+	font-size: 0.7rem;
+}
+.headName::before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: -10px;
+	transform: translatex(-50%);
+	border-radius: 10px;
+	width: 60%;
+	height: 40%;
+	background-color: colors.$secondaryWhite;
+}
+.messages {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-direction: column;
+	flex-basis: 75%;
+	padding: 10px 10px;
+	font-size: 0.5rem;
+	&__incoming {
+		max-width: 60%;
+		background-color: colors.$paleViolet;
+		color: colors.$moderateViolet;
+		@include border;
+	}
+	&__send {
+		align-self: flex-end;
+		border-radius: 10px;
+		padding: 5px;
+		padding-left: 10px;
+		background-color: white;
+		max-width: 60%;
+		color: colors.$secondaryDarkViolet;
+	}
+	&__img {
+		width: 60%;
+		align-self: flex-end;
+	}
+}
+.dog {
+	border-radius: 30%;
+	width: 30%;
+}
+.info {
+    @include flex;
+    justify-content: flex-start;
+    width: 80%;
+    @include border;
+	background: linear-gradient(
+		90deg,
+		rgba(233, 66, 255, 1) 46%,
+		rgba(136, 56, 255, 1) 100%
+	);
+	color: colors.$paleViolet;
+	&__money {
+		font-size: 0.9rem;
+		color: white;
+        margin-left: auto;
+        padding-right: 5px;
+	}
+	&__circle {
+        background-color: transparent;
+		width: 10px;
+		height: 10px;
+        margin-right: 5px;
+		border-radius: 50%;
+		border: 1px solid white;
+	}
+
+}
+.input {
+	@include flex;
+	justify-content: space-between;
+	background-color: white;
+	align-self: center;
+	border-radius: 30px;
+	width: 90%;
+	font-size: 0.7rem;
+	padding: 7px;
+	color: colors.$grayishBlue;
+	margin: 0 5px;
+	&__text {
+		padding: 5px;
+		padding-left: 10px;
+	}
+}
+.fa-chevron-right {
+	background-color: colors.$secondaryDarkViolet;
+	padding: 7px;
+	border-radius: 50%;
+}

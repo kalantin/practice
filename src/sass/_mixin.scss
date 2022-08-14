@@ -1,0 +1,10 @@
+@mixin flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin border{
+	border-radius: 10px;
+		padding: 5px;
+		padding-left: 10px;
+}
